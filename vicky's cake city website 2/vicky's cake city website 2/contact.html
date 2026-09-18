@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Vicky's Cake City</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <a href="index.html">
+                </a><hr>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="enquiry.html">Enquiry</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div><hr>
+    </header>
+    
+    <div class="container">
+        <h1>Contact Us</h1>
+        
+        <h2>Our Locations</h2>
+        <div class="locations">
+            <div class="location-card">
+                <h3> Main Bakery - Sandton</h3>
+                <p>
+                    <span class="location-label">Address:</span> Shop G15, Sandton City Mall, 83 Rivonia Road, Sandton, Johannesburg 2196
+                </p>
+                <p>
+                    <span class="location-label">Phone:</span> +27 11 123 4567
+                </p>
+                <p>
+                    <span class="location-label">Hours:</span> Mon-Fri: 8am-6pm, Sat: 9am-5pm, Sun: 10am-4pm
+                </p>
+                <p>
+                    <span class="location-label">Email:</span> sandton@vickyscakecity.com
+                </p>
+            </div>
+            
+            <div class="location-card">
+                <h3> Branch - Fourways</h3>
+                <p>
+                    <span class="location-label">Address:</span> 289 Pretorius Street, Hatfield, Pretoria, 0028
+                </p>
+                <p>
+                    <span class="location-label">Phone:</span> +27 11 987 6543
+                </p>
+                <p>
+                    <span class="location-label">Hours:</span> Mon-Fri: 8am-6pm, Sat: 9am-5pm, Sun: 10am-4pm
+                </p>
+                <p>
+                    <span class="location-label">Email:</span> hatfield@vickyscakecity.com 
+                </p>
+            </div><hr> 
+        </div>
+        
+        <div class="map-container">
+            <h2>Our Locations on Map</h2>
+            <div class="map-grid">
+                <div>
+                    <h3>Sandton Location</h3>
+                    <div class="map-placeholder">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.6958100139427!2d28.050144875195425!3d-26.10884667713535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95732d7abaa2bb%3A0x6e3b5ac49f8d784b!2sSandton%20City!5e0!3m2!1sen!2sza!4v1786624505488!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    </div>
+                </div><hr>
+                <div>
+                    <h3>Fourways Location</h3>
+                    <div class="map-placeholder">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3593.689014568104!2d28.18997567518263!3d-25.747795877360595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e956210f4cc6d6d%3A0x689ae1d33328e5d6!2s289%20Pretorius%20St%2C%20Pretoria%20Central%2C%20Pretoria%2C%200002!5e0!3m2!1sen!2sza!4v1786624692882!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    </div>
+                </div><hr>
+            </div>
+        </div>
+        
+        <h2>Get in Touch</h2>
+        <div class="contact-section">
+            <div class="form-container">
+                <h3>Contact Form</h3>
+                <div class="success-message" id="successMessage">
+                    <strong>✓ Success!</strong> Your message has been sent. We'll be in touch soon!
+                </div>
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div><br>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div><br>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div><br>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">-- Select a subject --</option>
+                            <option value="general">General Enquiry</option>
+                            <option value="catering">Catering Services</option>
+                            <option value="complaints">Complaints</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div><br>
+                    
+                    <div class="form-group">
+                        <label for="message">Message *</label><br>
+                        <textarea id="message" name="message" required></textarea>
+                    </div><br>
+                    
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+            
+            <div>
+                <div class="form-container">
+                    <h3>Quick Info</h3>
+                    <div>
+                        <h4> Phone</h4>
+                        <p>Main: +27 69 354 9046<br>Fourways: +27 78 123 4567</p>
+                    </div>
+                    <div>
+                        <h4> Email</h4>
+                        <p>info@vickyscakecity.com<br>orders@vickyscakecity.com</p>
+                    </div>
+                    <div >
+                        <h4 > Business Hours</h4>
+                        <p>Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 5:00 PM<br>Sunday: 10:00 AM - 4:00 PM</p>
+                    </div>
+                    <div>
+                        <h4> Booking Notice</h4>
+                        <p>We recommend placing orders at least 2 weeks in advance for custom cakes. Rush orders may be available for an additional fee.</p>
+                    </div>
+                </div>
+                
+                <div class="social-media">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" title="Facebook">Facebook</a>
+                        <a href="#" title="Instagram">Instagram</a>
+                        <a href="#" title="WhatsApp">WhatsApp</a>
+                        <a href="#" title="TikTok">TikTok</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2026 Vicky's Cake City. All rights reserved.</p>
+    </footer>
+</body>
+</html>
