@@ -1,4 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const today = new Date();
+  const toDateInputValue = (date) => {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  };
+
+  document.querySelectorAll('input[type="date"][name="event-date"]').forEach((input) => {
+    input.min = toDateInputValue(today);
+  });
+
   const yearNodes = document.querySelectorAll('[data-year]');
   yearNodes.forEach((node) => {
     node.textContent = new Date().getFullYear();
