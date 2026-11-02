@@ -5,11 +5,10 @@ Vicky's Cake City Website
 ## Student Information
 
 - Student Name: Vicky Makhubela
-- Student Number: [Insert Student Number]
-- Course: [Insert Course Name]
-- Module/Assessment: [Insert Module or POE Name]
-- Institution: [Insert Institution Name]
-- Year: [Insert Academic Year]
+- Student Number: [10522553]
+- Course: [DIS1]
+- Module/Assessment: [Web Development]
+- Year: [2026]
 
 ## Project Overview
 
