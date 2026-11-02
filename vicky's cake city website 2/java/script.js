@@ -76,11 +76,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   document.querySelectorAll('form').forEach((form) => {
-    const successMessage = form.parentElement?.querySelector('.success-message');
+    const successMessage = form.parentElement?.querySelector('.success-message, #successMessage');
     const fields = Array.from(form.querySelectorAll('input, select, textarea'));
 
     const showFieldError = (field, message) => {
-      const errorNode = field.parentElement?.querySelector('.field-error');
+      const parent = field.parentElement;
+      const errorNode = parent?.querySelector('.field-error');
       if (errorNode) {
         errorNode.textContent = message || '';
       }
@@ -119,11 +120,12 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     fields.forEach((field) => {
-      if (!field.parentElement?.querySelector('.field-error')) {
+      const parent = field.parentElement;
+      if (parent && !parent.querySelector('.field-error')) {
         const errorNode = document.createElement('span');
         errorNode.className = 'field-error';
         errorNode.setAttribute('aria-live', 'polite');
-        field.parentElement.appendChild(errorNode);
+        parent.appendChild(errorNode);
       }
 
       field.addEventListener('blur', () => validateField(field));
