@@ -2,6 +2,10 @@
 
 Vicky's Cake City Website
 
+## Live Demo
+
+Website: https://vickyscitycake.netlify.app/
+
 ## Student Information
 
 - Student Name: Vicky Makhubela
