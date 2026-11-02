@@ -62,4 +62,4 @@ This is a front-end static website and does not currently connect to a backend o
 
 ## Author
 
-Vicky's Cake City
+Vicky's Cake city 
