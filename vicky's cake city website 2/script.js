@@ -1,13 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const yearTarget = document.querySelector('[data-year]');
-  if (yearTarget) {
-    yearTarget.textContent = new Date().getFullYear();
-  }
+  const yearNodes = document.querySelectorAll('[data-year]');
+  yearNodes.forEach((node) => {
+    node.textContent = new Date().getFullYear();
+  });
 
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const currentPage = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+
   document.querySelectorAll('.main-nav a').forEach((link) => {
-    const href = link.getAttribute('href');
-    if (href === currentPage) {
+    const href = (link.getAttribute('href') || '').toLowerCase();
+    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
       link.classList.add('active');
     }
   });
@@ -35,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   document.querySelectorAll('form').forEach((form) => {
-    const successMessage = form.parentElement?.querySelector('.success-message');
+    const success = (form.closest('.container') || form.parentElement || document.body).querySelector('.success-message');
 
     form.addEventListener('submit', (event) => {
       event.preventDefault();
@@ -45,8 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      if (successMessage) {
-        successMessage.style.display = 'block';
+      if (success) {
+        success.style.display = 'block';
       }
 
       form.reset();
