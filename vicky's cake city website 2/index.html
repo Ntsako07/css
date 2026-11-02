@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vicky's Cake City creates custom cakes for weddings, birthdays, corporate events and special celebrations in Gauteng, South Africa.">
+    <meta name="keywords" content="custom cakes, wedding cakes, birthday cakes, Gauteng bakery, Vicky's Cake City, cake delivery South Africa">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Vicky's Cake City | Custom Cakes in Gauteng">
+    <meta property="og:description" content="Premium custom cakes for birthdays, weddings, engagements and corporate events.">
+    <meta property="og:type" content="website">
     <title>Vicky's Cake City - Premium Custom Cakes</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,6 +19,7 @@
                 <a href="index.html"></a>
                 <hr>
             </div>
+            <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -25,9 +32,9 @@
         </div>
     </header>
 
-    <section class="hero">
+    <section class="hero reveal">
         <div class="hero-inner">
-            <div class="hero-content">
+            <div class="hero-content reveal">
                 <p class="eyebrow">Freshly baked. Beautifully designed.</p>
                 <h1>Sweet moments deserve a show-stopping cake.</h1>
                 <p>From romantic weddings to joyful birthday celebrations, we create custom cakes that look stunning and taste unforgettable.</p>
@@ -40,33 +47,50 @@
     </section>
 
     <div class="container home-page">
-        <section class="intro-section home-intro">
+        <section class="intro-section home-intro reveal">
             <h2>Crafted with love</h2>
             <p>At Vicky's Cake City, every cake is made with premium ingredients, artistic detail, and personal care so your celebration feels extra special from the very first bite.</p>
         </section>
 
         <section class="feature-grid">
-            <article class="feature-card">
+            <article class="feature-card reveal">
                 <div class="feature-icon">✦</div>
                 <h3>Custom Designs</h3>
                 <p>From elegant minimalism to playful themes, every cake is designed around your story.</p>
             </article>
-            <article class="feature-card">
+            <article class="feature-card reveal">
                 <div class="feature-icon">♥</div>
                 <h3>Premium Flavours</h3>
                 <p>Rich chocolate, decadent vanilla, fruity favourites, and signature recipes made to impress.</p>
             </article>
-            <article class="feature-card">
+            <article class="feature-card reveal">
                 <div class="feature-icon">✓</div>
                 <h3>Reliable Service</h3>
                 <p>We make the process easy with thoughtful guidance, timely delivery, and dependable care.</p>
             </article>
         </section>
+    </div>
 
+    <div class="social-strip reveal">
+        <div class="social-strip-inner">
+            <div class="footer-links">
+                <a href="#">Terms &amp; Privacy</a>
+                <a href="#">Sitemap</a>
+            </div>
+
+            
+            <div class="social-links" aria-label="Social media links">
+                <a href="#" class="social-button" aria-label="X">X</a>
+                <a href="#" class="social-button" aria-label="YouTube">▶</a>
+                <a href="#" class="social-button" aria-label="Instagram">◎</a>
+                <a href="#" class="social-button primary" aria-label="TikTok">T</a>
+            </div>
+        </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Vicky's Cake City. All rights reserved.</p>
+        <p>&copy; <span data-year></span> Vicky's Cake City. All rights reserved.</p>
     </footer>
+    <script src="java/script.js"></script>
 </body>
 </html>

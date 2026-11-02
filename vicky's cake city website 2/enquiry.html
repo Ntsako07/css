@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Request a quote for custom cakes, wedding cakes, birthday cakes and event desserts from Vicky's Cake City.">
+    <meta name="keywords" content="cake enquiry, custom cake quote, wedding cake enquiry, Gauteng cake consultation">
+    <meta name="robots" content="index, follow">
     <title>Enquiry - Vicky's Cake City</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,6 +16,7 @@
                 <a href="index.html">
                 </a><hr> 
             </div>
+            <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -26,30 +30,30 @@
     </header>
     <hr>
     <div class="container">
-        <h1>Cake Enquiry Form</h1>
-        <p class="intro-text">We'd love to create the perfect cake for your special occasion! Please fill out the form below with your details and cake requirements.</p>
+        <h1 class="reveal">Cake Enquiry Form</h1>
+        <p class="intro-text reveal">We'd love to create the perfect cake for your special occasion! Please fill out the form below with your details and cake requirements.</p>
         
-        <div class="success-message" id="successMessage">
+        <div class="success-message reveal" id="successMessage">
             <strong>✓ Success!</strong> Your enquiry has been submitted. We'll be in touch soon!
         </div>
         
-        <div class="form-container">
-            <form id="enquiryForm">
+        <div class="form-container reveal">
+            <form id="enquiryForm" action="https://httpbin.org/post" method="POST" novalidate>
                 <div class="form-row">
                     <div class="form-group">
                         <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" name="name" required minlength="2" maxlength="80">
                     </div>
                     <div class="form-group">
                         <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" required maxlength="100">
                     </div>
                 </div>
                 
                 <div class="form-row">
                     <div class="form-group">
                         <label for="phone">Phone Number *</label>
-                        <input type="tel" id="phone" name="phone" required>
+                        <input type="tel" id="phone" name="phone" required pattern="^[0-9+()\s-]{7,20}$" maxlength="20">
                     </div>
                     <div class="form-group">
                         <label for="event-date">Event Date *</label>
@@ -75,22 +79,22 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="servings">Number of Servings *</label>
-                        <input type="text" id="servings" name="servings" placeholder="e.g., 50" required>
+                        <input type="number" id="servings" name="servings" placeholder="e.g., 50" required min="1" max="5000">
                     </div>
                     <div class="form-group">
                         <label for="budget">Estimated Budget</label>
-                        <input type="text" id="budget" name="budget" placeholder="e.g., R500-R1000">
+                        <input type="text" id="budget" name="budget" placeholder="e.g., R500-R1000" maxlength="30">
                     </div>
                 </div>
                 
                 <div class="form-group">
-                    <label for="cake-design">Cake Design & Preferences *</label>
-                    <textarea id="cake-design" name="cake-design" placeholder="Describe your ideal cake design, flavors, colors, theme, dietary requirements, etc." required></textarea>
+                    <label for="cake-design">Cake Design &amp; Preferences *</label>
+                    <textarea id="cake-design" name="cake-design" placeholder="Describe your ideal cake design, flavors, colors, theme, dietary requirements, etc." required minlength="20" maxlength="1000"></textarea>
                 </div>
                 
                 <div class="form-group">
                     <label for="special-requests">Special Requests or Questions</label>
-                    <textarea id="special-requests" name="special-requests" placeholder="Any additional information you'd like us to know..."></textarea>
+                    <textarea id="special-requests" name="special-requests" placeholder="Any additional information you'd like us to know..." maxlength="1000"></textarea>
                 </div>
                 
                 <button type="submit" class="submit-btn">Submit Enquiry</button>
@@ -98,8 +102,25 @@
         </div>
     </div>
     
+    <div class="social-strip">
+        <div class="social-strip-inner">
+            <div class="footer-links">
+                <a href="#">Terms &amp; Privacy</a>
+                <a href="#">Sitemap</a>
+            </div>
+
+            <div class="social-links" aria-label="Social media links">
+                <a href="#" class="social-button" aria-label="X">X</a>
+                <a href="#" class="social-button" aria-label="YouTube">▶</a>
+                <a href="#" class="social-button" aria-label="Instagram">◎</a>
+                <a href="#" class="social-button primary" aria-label="TikTok">T</a>
+            </div>
+        </div>
+    </div>
+
     <footer>
-        <p>&copy; 2026 Vicky's Cake City. All rights reserved.</p>
+        <p>&copy; <span data-year></span> Vicky's Cake City. All rights reserved.</p>
     </footer>
+    <script src="java/script.js"></script>
 </body>
 </html>

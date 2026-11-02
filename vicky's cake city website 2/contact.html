@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Vicky's Cake City for custom cake orders, event cakes and bakery enquiries in Sandton and Gauteng.">
+    <meta name="keywords" content="contact Vicky's Cake City, bakery contact, cake shop Gauteng, custom cake order South Africa">
+    <meta name="robots" content="index, follow">
     <title>Contact Us - Vicky's Cake City</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,6 +16,7 @@
                 <a href="index.html">
                 </a><hr>
             </div>
+            <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -26,11 +30,50 @@
     </header>
     
     <div class="container">
-        <h1>Contact Us</h1>
+        <h1 class="reveal">Contact Us</h1>
         
-        <h2>Our Locations</h2>
+        <h2 class="reveal">Our Locations</h2>
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Bakery",
+          "name": "Vicky's Cake City",
+          "image": "https://www.vickyscakecity.com/images/logo.png",
+          "telephone": "+27 69 354 9046",
+          "email": "info@vickyscakecity.com",
+          "address": [
+            {
+              "@type": "PostalAddress",
+              "streetAddress": "Shop G15, Sandton City Mall, 83 Rivonia Road",
+              "addressLocality": "Sandton",
+              "addressRegion": "Gauteng",
+              "postalCode": "2196",
+              "addressCountry": "ZA"
+            },
+            {
+              "@type": "PostalAddress",
+              "streetAddress": "289 Pretorius Street, Pretoria Central",
+              "addressLocality": "Pretoria",
+              "addressRegion": "Gauteng",
+              "postalCode": "0028",
+              "addressCountry": "ZA"
+            }
+          ],
+          "url": "https://www.vickyscakecity.com",
+          "sameAs": [
+            "https://www.facebook.com",
+            "https://www.instagram.com",
+            "https://www.tiktok.com"
+          ],
+          "openingHours": [
+            "Mo-Fr 08:00-18:00",
+            "Sa 09:00-17:00",
+            "Su 10:00-16:00"
+          ]
+        }
+        </script>
         <div class="locations">
-            <div class="location-card">
+            <div class="location-card reveal">
                 <h3> Main Bakery - Sandton</h3>
                 <p>
                     <span class="location-label">Address:</span> Shop G15, Sandton City Mall, 83 Rivonia Road, Sandton, Johannesburg 2196
@@ -46,10 +89,10 @@
                 </p>
             </div>
             
-            <div class="location-card">
-                <h3> Branch - Fourways</h3>
+            <div class="location-card reveal">
+                <h3> Branch - Pretoria</h3>
                 <p>
-                    <span class="location-label">Address:</span> 289 Pretorius Street, Hatfield, Pretoria, 0028
+                    <span class="location-label">Address:</span> 289 Pretorius Street, Pretoria Central, Pretoria, 0028
                 </p>
                 <p>
                     <span class="location-label">Phone:</span> +27 11 987 6543
@@ -58,22 +101,22 @@
                     <span class="location-label">Hours:</span> Mon-Fri: 8am-6pm, Sat: 9am-5pm, Sun: 10am-4pm
                 </p>
                 <p>
-                    <span class="location-label">Email:</span> hatfield@vickyscakecity.com 
+                    <span class="location-label">Email:</span> pretoria@vickyscakecity.com
                 </p>
             </div><hr> 
         </div>
         
-        <div class="map-container">
+        <div class="map-container reveal">
             <h2>Our Locations on Map</h2>
             <div class="map-grid">
-                <div>
+                <div class="reveal">
                     <h3>Sandton Location</h3>
                     <div class="map-placeholder">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.6958100139427!2d28.050144875195425!3d-26.10884667713535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95732d7abaa2bb%3A0x6e3b5ac49f8d784b!2sSandton%20City!5e0!3m2!1sen!2sza!4v1786624505488!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                     </div>
                 </div><hr>
-                <div>
-                    <h3>Fourways Location</h3>
+                <div class="reveal">
+                    <h3>Pretoria Location</h3>
                     <div class="map-placeholder">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3593.689014568104!2d28.18997567518263!3d-25.747795877360595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e956210f4cc6d6d%3A0x689ae1d33328e5d6!2s289%20Pretorius%20St%2C%20Pretoria%20Central%2C%20Pretoria%2C%200002!5e0!3m2!1sen!2sza!4v1786624692882!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                     </div>
@@ -81,28 +124,28 @@
             </div>
         </div>
         
-        <h2>Get in Touch</h2>
+        <h2 class="reveal">Get in Touch</h2>
         <div class="contact-section">
-            <div class="form-container">
+            <div class="form-container reveal">
                 <h3>Contact Form</h3>
                 <div class="success-message" id="successMessage">
                     <strong>✓ Success!</strong> Your message has been sent. We'll be in touch soon!
                 </div>
-                <form id="contactForm">
+                <form id="contactForm" action="https://httpbin.org/post" method="POST" novalidate>
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required>
+                            <input type="text" id="name" name="name" required minlength="2" maxlength="80">
                         </div><br>
                         <div class="form-group">
                             <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" required maxlength="100">
                         </div><br>
                     </div>
                     
                     <div class="form-group">
                         <label for="phone">Phone Number *</label>
-                        <input type="tel" id="phone" name="phone" required>
+                        <input type="tel" id="phone" name="phone" required pattern="^[0-9+()\s-]{7,20}$" maxlength="20">
                     </div><br>
                     
                     <div class="form-group">
@@ -118,7 +161,7 @@
                     
                     <div class="form-group">
                         <label for="message">Message *</label><br>
-                        <textarea id="message" name="message" required></textarea>
+                        <textarea id="message" name="message" required minlength="20" maxlength="1000"></textarea>
                     </div><br>
                     
                     <button type="submit" class="submit-btn">Send Message</button>
@@ -126,11 +169,11 @@
             </div>
             
             <div>
-                <div class="form-container">
+                <div class="form-container reveal">
                     <h3>Quick Info</h3>
                     <div>
                         <h4> Phone</h4>
-                        <p>Main: +27 69 354 9046<br>Fourways: +27 78 123 4567</p>
+                        <p>Main: +27 69 354 9046<br>Pretoria: +27 78 123 4567</p>
                     </div>
                     <div>
                         <h4> Email</h4>
@@ -146,7 +189,7 @@
                     </div>
                 </div>
                 
-                <div class="social-media">
+                <div class="social-media reveal">
                     <h3>Follow Us</h3>
                     <div class="social-links">
                         <a href="#" title="Facebook">Facebook</a>
@@ -159,8 +202,25 @@
         </div>
     </div>
     
+    <div class="social-strip">
+        <div class="social-strip-inner">
+            <div class="footer-links">
+                <a href="#">Terms &amp; Privacy</a>
+                <a href="#">Sitemap</a>
+            </div>
+
+            <div class="social-links" aria-label="Social media links">
+                <a href="#" class="social-button" aria-label="X">X</a>
+                <a href="#" class="social-button" aria-label="YouTube">▶</a>
+                <a href="#" class="social-button" aria-label="Instagram">◎</a>
+                <a href="#" class="social-button primary" aria-label="TikTok">T</a>
+            </div>
+        </div>
+    </div>
+
     <footer>
-        <p>&copy; 2026 Vicky's Cake City. All rights reserved.</p>
+        <p>&copy; <span data-year></span> Vicky's Cake City. All rights reserved.</p>
     </footer>
+    <script src="java/script.js"></script>
 </body>
 </html>
