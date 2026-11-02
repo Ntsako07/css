@@ -99,9 +99,21 @@ header > hr,
 }
 
 .main-nav a:hover,
-.main-nav a:focus-visible {
+.main-nav a:focus-visible,
+.main-nav a.active {
 	color: var(--white);
 	background: var(--berry);
+}
+
+.reveal {
+	opacity: 0;
+	transform: translateY(24px);
+	transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.is-visible {
+	opacity: 1;
+	transform: translateY(0);
 }
 
 header {
@@ -807,6 +819,107 @@ textarea {
 	background: var(--peach);
 	font-weight: 700;
 	text-decoration: none;
+}
+
+.social-strip {
+	background: #081a20;
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
+	padding: 18px 24px 14px;
+}
+
+.social-strip-inner {
+	width: min(1180px, calc(100% - 48px));
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 24px;
+}
+
+.footer-links {
+	display: flex;
+	align-items: center;
+	gap: 30px;
+	flex-wrap: wrap;
+}
+
+.footer-links a {
+	color: #f4f3f0;
+	font-size: 0.95rem;
+	font-weight: 600;
+	text-decoration: none;
+	opacity: 0.9;
+}
+
+.social-links {
+	display: flex;
+	align-items: center;
+	gap: 18px;
+}
+
+.social-button {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 50px;
+	height: 50px;
+	border: 2px solid rgba(255, 255, 255, 0.9);
+	border-radius: 50%;
+	color: #ffffff;
+	font-size: 1rem;
+	font-weight: 800;
+	text-decoration: none;
+	overflow: hidden;
+	background: rgba(255, 255, 255, 0.02);
+	transition: transform 180ms ease, border-color 180ms ease;
+	z-index: 0;
+}
+
+.social-button::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 0;
+	background: linear-gradient(180deg, #f7bfd8 0%, #c81e67 100%);
+	transition: height 0.7s ease;
+	z-index: -1;
+}
+
+.social-button:hover,
+.social-button:focus-visible {
+	transform: translateY(-2px);
+	border-color: rgba(255, 255, 255, 1);
+}
+
+.social-button:hover::before,
+.social-button:focus-visible::before {
+	height: 100%;
+}
+
+.social-button.primary::before {
+	background: linear-gradient(180deg, #f7bfd8 0%, #c81e67 100%);
+}
+
+.social-button.primary {
+	border-color: rgba(255, 255, 255, 0.9);
+	color: #fffaf7;
+}
+
+.social-button:not(.primary)::before {
+	background: linear-gradient(180deg, #fefefe 0%, #f7bfd8 100%);
+}
+
+.social-button:not(.primary) {
+	color: #1f1b1d;
+}
+
+.social-button span,
+.social-button {
+	position: relative;
+	z-index: 1;
 }
 
 footer {

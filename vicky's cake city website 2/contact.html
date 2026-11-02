@@ -26,11 +26,11 @@
     </header>
     
     <div class="container">
-        <h1>Contact Us</h1>
+        <h1 class="reveal">Contact Us</h1>
         
-        <h2>Our Locations</h2>
+        <h2 class="reveal">Our Locations</h2>
         <div class="locations">
-            <div class="location-card">
+            <div class="location-card reveal">
                 <h3> Main Bakery - Sandton</h3>
                 <p>
                     <span class="location-label">Address:</span> Shop G15, Sandton City Mall, 83 Rivonia Road, Sandton, Johannesburg 2196
@@ -46,7 +46,7 @@
                 </p>
             </div>
             
-            <div class="location-card">
+            <div class="location-card reveal">
                 <h3> Branch - Fourways</h3>
                 <p>
                     <span class="location-label">Address:</span> 289 Pretorius Street, Hatfield, Pretoria, 0028
@@ -63,16 +63,16 @@
             </div><hr> 
         </div>
         
-        <div class="map-container">
+        <div class="map-container reveal">
             <h2>Our Locations on Map</h2>
             <div class="map-grid">
-                <div>
+                <div class="reveal">
                     <h3>Sandton Location</h3>
                     <div class="map-placeholder">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.6958100139427!2d28.050144875195425!3d-26.10884667713535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95732d7abaa2bb%3A0x6e3b5ac49f8d784b!2sSandton%20City!5e0!3m2!1sen!2sza!4v1786624505488!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                     </div>
                 </div><hr>
-                <div>
+                <div class="reveal">
                     <h3>Fourways Location</h3>
                     <div class="map-placeholder">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3593.689014568104!2d28.18997567518263!3d-25.747795877360595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e956210f4cc6d6d%3A0x689ae1d33328e5d6!2s289%20Pretorius%20St%2C%20Pretoria%20Central%2C%20Pretoria%2C%200002!5e0!3m2!1sen!2sza!4v1786624692882!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
@@ -81,9 +81,9 @@
             </div>
         </div>
         
-        <h2>Get in Touch</h2>
+        <h2 class="reveal">Get in Touch</h2>
         <div class="contact-section">
-            <div class="form-container">
+            <div class="form-container reveal">
                 <h3>Contact Form</h3>
                 <div class="success-message" id="successMessage">
                     <strong>✓ Success!</strong> Your message has been sent. We'll be in touch soon!
@@ -126,7 +126,7 @@
             </div>
             
             <div>
-                <div class="form-container">
+                <div class="form-container reveal">
                     <h3>Quick Info</h3>
                     <div>
                         <h4> Phone</h4>
@@ -146,7 +146,7 @@
                     </div>
                 </div>
                 
-                <div class="social-media">
+                <div class="social-media reveal">
                     <h3>Follow Us</h3>
                     <div class="social-links">
                         <a href="#" title="Facebook">Facebook</a>
@@ -159,8 +159,25 @@
         </div>
     </div>
     
+    <div class="social-strip">
+        <div class="social-strip-inner">
+            <div class="footer-links">
+                <a href="#">Terms &amp; Privacy</a>
+                <a href="#">Sitemap</a>
+            </div>
+
+            <div class="social-links" aria-label="Social media links">
+                <a href="#" class="social-button" aria-label="X">X</a>
+                <a href="#" class="social-button" aria-label="YouTube">▶</a>
+                <a href="#" class="social-button" aria-label="Instagram">◎</a>
+                <a href="#" class="social-button primary" aria-label="TikTok">T</a>
+            </div>
+        </div>
+    </div>
+
     <footer>
-        <p>&copy; 2026 Vicky's Cake City. All rights reserved.</p>
+        <p>&copy; <span data-year></span> Vicky's Cake City. All rights reserved.</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
