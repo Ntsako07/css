@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     node.textContent = new Date().getFullYear();
   });
 
-  const currentPage = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  const rawPath = window.location.pathname.split('/').pop();
+  const currentPage = (rawPath || 'index.html').toLowerCase();
 
   document.querySelectorAll('.main-nav a').forEach((link) => {
     const href = (link.getAttribute('href') || '').toLowerCase();
@@ -23,20 +24,25 @@ document.addEventListener('DOMContentLoaded', () => {
           revealObserver.unobserve(entry.target);
         }
       });
-    }, {
-      threshold: 0.15,
-    });
+    }, { threshold: 0.15 });
 
     revealElements.forEach((element) => {
-      element.classList.add('reveal');
+      if (!element.classList.contains('reveal')) {
+        element.classList.add('reveal');
+      }
       revealObserver.observe(element);
     });
   } else {
-    revealElements.forEach((element) => element.classList.add('reveal', 'is-visible'));
+    revealElements.forEach((element) => {
+      if (!element.classList.contains('reveal')) {
+        element.classList.add('reveal');
+      }
+      element.classList.add('is-visible');
+    });
   }
 
   document.querySelectorAll('form').forEach((form) => {
-    const success = (form.closest('.container') || form.parentElement || document.body).querySelector('.success-message');
+    const successMessage = form.parentElement?.querySelector('.success-message');
 
     form.addEventListener('submit', (event) => {
       event.preventDefault();
@@ -46,8 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      if (success) {
-        success.style.display = 'block';
+      if (successMessage) {
+        successMessage.style.display = 'block';
       }
 
       form.reset();
