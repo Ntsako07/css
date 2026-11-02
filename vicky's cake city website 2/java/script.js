@@ -77,53 +77,123 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('form').forEach((form) => {
     const successMessage = form.parentElement?.querySelector('.success-message');
-    const fields = form.querySelectorAll('input, select, textarea');
+    const fields = Array.from(form.querySelectorAll('input, select, textarea'));
 
-    const setFieldState = (field) => {
-      const isInvalid = field.dataset.touched === 'true' && !field.checkValidity();
-      field.classList.toggle('is-invalid', isInvalid);
-      field.setAttribute('aria-invalid', String(isInvalid));
+    const showFieldError = (field, message) => {
+      const errorNode = field.parentElement?.querySelector('.field-error');
+      if (errorNode) {
+        errorNode.textContent = message || '';
+      }
+      const invalid = Boolean(message);
+      field.classList.toggle('is-invalid', invalid);
+      field.setAttribute('aria-invalid', String(invalid));
+      return !invalid;
+    };
+
+    const validateField = (field) => {
+      field.dataset.touched = 'true';
+      const value = field.value.trim();
+      let error = '';
+
+      if (field.required && !value) {
+        error = 'This field is required.';
+      } else if (field.type === 'email' && value && !field.validity.valid) {
+        error = 'Please enter a valid email address.';
+      } else if (field.type === 'tel' && value && !/^[0-9+()\s-]{7,20}$/.test(value)) {
+        error = 'Please enter a valid phone number.';
+      } else if (field.type === 'date' && value && field.min && new Date(value) < new Date(field.min)) {
+        error = 'Please choose a valid date.';
+      } else if (field.name === 'servings' && value && (Number(value) < 1 || Number(value) > 5000)) {
+        error = 'Please enter a realistic serving count.';
+      } else if (field.name === 'message' && value.length < 20) {
+        error = 'Please write at least 20 characters.';
+      } else if (field.name === 'cake-design' && value.length < 20) {
+        error = 'Please describe your design in at least 20 characters.';
+      } else if (field.minLength && value.length && value.length < Number(field.minLength)) {
+        error = `Please enter at least ${field.minLength} characters.`;
+      } else if (field.maxLength && value.length > Number(field.maxLength)) {
+        error = `Please enter no more than ${field.maxLength} characters.`;
+      }
+
+      return showFieldError(field, error);
     };
 
     fields.forEach((field) => {
-      field.addEventListener('blur', () => {
-        field.dataset.touched = 'true';
-        setFieldState(field);
-      });
+      if (!field.parentElement?.querySelector('.field-error')) {
+        const errorNode = document.createElement('span');
+        errorNode.className = 'field-error';
+        errorNode.setAttribute('aria-live', 'polite');
+        field.parentElement.appendChild(errorNode);
+      }
 
+      field.addEventListener('blur', () => validateField(field));
       field.addEventListener('input', () => {
         if (field.dataset.touched === 'true') {
-          setFieldState(field);
+          validateField(field);
         }
       });
     });
 
-    form.addEventListener('submit', (event) => {
+    form.addEventListener('submit', async (event) => {
       event.preventDefault();
 
+      let valid = true;
       fields.forEach((field) => {
-        field.dataset.touched = 'true';
-        setFieldState(field);
+        if (!validateField(field)) {
+          valid = false;
+        }
       });
 
-      if (!form.checkValidity()) {
-        form.classList.add('was-validated');
-        form.reportValidity();
+      if (!valid) {
+        if (successMessage) {
+          successMessage.style.display = 'none';
+          successMessage.classList.remove('is-error');
+        }
         return;
       }
 
-      form.classList.remove('was-validated');
+      const submitButton = form.querySelector('button[type="submit"]');
+      const originalText = submitButton.textContent;
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending...';
 
-      if (successMessage) {
-        successMessage.style.display = 'block';
+      try {
+        const response = await fetch(form.action, {
+          method: form.method || 'POST',
+          headers: {
+            Accept: 'application/json',
+          },
+          body: new FormData(form),
+        });
+
+        if (!response.ok) {
+          throw new Error('Submission failed');
+        }
+
+        if (successMessage) {
+          successMessage.classList.remove('is-error');
+          successMessage.innerHTML = '<strong>✓ Success!</strong> Your message has been sent. We will be in touch soon!';
+          successMessage.style.display = 'block';
+        }
+
+        form.reset();
+        fields.forEach((field) => {
+          field.classList.remove('is-invalid');
+          field.setAttribute('aria-invalid', 'false');
+          const errorNode = field.parentElement?.querySelector('.field-error');
+          if (errorNode) errorNode.textContent = '';
+          delete field.dataset.touched;
+        });
+      } catch (error) {
+        if (successMessage) {
+          successMessage.classList.add('is-error');
+          successMessage.innerHTML = '<strong>⚠ Error!</strong> Please check your details and try again.';
+          successMessage.style.display = 'block';
+        }
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
       }
-
-      form.reset();
-      fields.forEach((field) => {
-        field.classList.remove('is-invalid');
-        field.setAttribute('aria-invalid', 'false');
-        delete field.dataset.touched;
-      });
     });
   });
 });

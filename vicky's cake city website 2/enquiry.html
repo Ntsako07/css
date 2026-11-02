@@ -38,26 +38,26 @@
         </div>
         
         <div class="form-container reveal">
-            <form id="enquiryForm">
+            <form id="enquiryForm" action="https://httpbin.org/post" method="POST" novalidate>
                 <div class="form-row">
                     <div class="form-group">
                         <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" name="name" required minlength="2" maxlength="80">
                     </div>
                     <div class="form-group">
                         <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" required maxlength="100">
                     </div>
                 </div>
                 
                 <div class="form-row">
                     <div class="form-group">
                         <label for="phone">Phone Number *</label>
-                        <input type="tel" id="phone" name="phone" required>
+                        <input type="tel" id="phone" name="phone" required pattern="^[0-9+()\s-]{7,20}$" maxlength="20">
                     </div>
                     <div class="form-group">
                         <label for="event-date">Event Date *</label>
-                        <input type="date" id="event-date" name="event-date" required>
+                        <input type="date" id="event-date" name="event-date" required min="2026-11-02">
                     </div>
                 </div>
                 
@@ -79,22 +79,22 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="servings">Number of Servings *</label>
-                        <input type="text" id="servings" name="servings" placeholder="e.g., 50" required>
+                        <input type="number" id="servings" name="servings" placeholder="e.g., 50" required min="1" max="5000">
                     </div>
                     <div class="form-group">
                         <label for="budget">Estimated Budget</label>
-                        <input type="text" id="budget" name="budget" placeholder="e.g., R500-R1000">
+                        <input type="text" id="budget" name="budget" placeholder="e.g., R500-R1000" maxlength="30">
                     </div>
                 </div>
                 
                 <div class="form-group">
-                    <label for="cake-design">Cake Design & Preferences *</label>
-                    <textarea id="cake-design" name="cake-design" placeholder="Describe your ideal cake design, flavors, colors, theme, dietary requirements, etc." required></textarea>
+                    <label for="cake-design">Cake Design &amp; Preferences *</label>
+                    <textarea id="cake-design" name="cake-design" placeholder="Describe your ideal cake design, flavors, colors, theme, dietary requirements, etc." required minlength="20" maxlength="1000"></textarea>
                 </div>
                 
                 <div class="form-group">
                     <label for="special-requests">Special Requests or Questions</label>
-                    <textarea id="special-requests" name="special-requests" placeholder="Any additional information you'd like us to know..."></textarea>
+                    <textarea id="special-requests" name="special-requests" placeholder="Any additional information you'd like us to know..." maxlength="1000"></textarea>
                 </div>
                 
                 <button type="submit" class="submit-btn">Submit Enquiry</button>

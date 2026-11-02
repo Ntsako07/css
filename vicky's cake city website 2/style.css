@@ -821,6 +821,21 @@ textarea {
 	box-shadow: 0 8px 20px rgba(76, 139, 99, 0.12);
 }
 
+.success-message.is-error {
+	border-left-color: #c85c5c;
+	background: #fff0f0;
+	color: #8d2d2d;
+}
+
+.field-error {
+	display: block;
+	min-height: 18px;
+	margin-top: 6px;
+	color: #b73434;
+	font-size: 0.8rem;
+	font-weight: 700;
+}
+
 .locations {
 	grid-template-columns: repeat(2, 1fr);
 	margin-bottom: 54px;
